@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body class="text-center" >
+    <?php include('_navbar.html'); ?>
+    <div style="text-align: left;">
+        <img src="../views/img/person-circle.svg"  width="30px" alt="Sa connecter en tant qu'administrateur" title="Se connecter en tant qu'admiinistrateur" />
+        <a href="../admin/auth.php" title="Se connecter en tant qu'administrateur">Admin</a>
+    </div>
+    <div style="text-align: end; ">
+        <img src="../views/img/box-arrow-right.svg" width="30px" alt="Deconnexion" title="Deconnexion" />
+        <a href="../config/logout.php" title="Déconnexion">Déconnexion</a>
+    </div>
+    <br><br>
+    <div class="card" style="width: 18rem; margin-left:auto; margin-right: auto; ">
+        <div class="card-header">
+            Veuillez mettre votre mot de passe
+        </div>
+        <form method="post" action="">
+            <label for="pass">Mot de passe :</label>
+            <div class="col-lg-10">
+                <input class="form-control" id="disabledInput" type="password" name="pass" placeholder="Entrer votre mot de passe"><br>
+            </div>
+            <div class="card-footer">
+                <input class="btn btn-success" type="submit" name="envoyer" value="Arrivé">
+                <input class="btn btn-danger" type="submit" name="depart" value="Départ">
+            </div>
+    </div>
+    </form>
+    <div class="card" style="width: 10rem;">
+        <p class="card-body" style="color: brown;">
+            <?php erreur($erreur) ?>
+        </p>
+    </div>
+</body>
+
+</html>

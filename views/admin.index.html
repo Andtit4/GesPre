@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body>
+    <img src="../views/img/person-circle.svg" width="30px" />
+    <a href="../sign-in.php?admin=<?=$id_admin;?>" title="Ajouter un employé">Ajouter un employé</a>
+    <?php include('_navbar.html'); ?>
+    <div style="text-align: end; ">
+        <img src="../views/img/box-arrow-right.svg" width="30px" alt="Deconnexion" title="Deconnexion" />
+        <a href="../config/logout.php" title="Déconnexion">Déconnexion</a>
+        <form method="post" action="admin-search.php" style="width: 18rem; margin-left:auto; margin-right: auto;">
+            <p class="text-center">Rechercher une date :</p>
+            <input type="date" class="form-control" name="date_src">
+            <p class="text-center"><input type="submit" class="btn btn-primary" value="Rechercher" name="recherche"></p>
+        </form><br><br>
+    </div>
+    <?php if($activate = true){ ?>
+    <?php  while($reqSelectAdminInfo = $reqSelectAdmin -> fetch()) {?>
+    <div class="card" style="width: 18rem; margin-left:auto; margin-right: auto; ">
+        <div class="card-header">
+            M/Mme
+            <?= $reqSelectAdminInfo['nom_emp']; ?>
+            <?= $reqSelectAdminInfo['prenom_emp']; ?>
+        </div>
+        <div class="card-body">
+            <p>Arrivé :
+                <?= $reqSelectAdminInfo['heure_arrive']; ?>
+            </p>
+            <p>
+                <?php if ($reqSelectAdminInfo['heure_depart'] == ''){echo "<div style='color: red;''>Toujours en service</div>"; }else{ echo "Départ :"." ".$reqSelectAdminInfo['heure_depart'];}  ?>
+            </p>
+        </div>
+        <div class="card-footer">
+            <h5>Présence N°
+                <?= $reqSelectAdminInfo['id_point']; ?>
+            </h5>
+        </div><br><br>
+    </div>
+    </div>
+    <?php  } ?>
+  
+    <?php } ?>
+
+</body>
+
+</html>

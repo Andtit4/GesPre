@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body class="">
+    <?php include('_navbar.html'); ?>
+    <div style="text-align: left;">
+        <img src="views/img/person-circle.svg"  width="30px" alt="Sa connecter en tant qu'administrateur" title="Se connecter en tant qu'admiinistrateur" />
+        <a href="admin/auth.php" title="Se connecter en tant qu'administrateur">Admin</a>
+    </div>
+    <?php while($userSelInfo = $reqSelAllUser -> fetch()) {?>
+    <div class="card" style="width: 18rem; margin-left: auto; margin-right: auto;">
+        <div class="card-header">
+            Matricule <?= $userSelInfo['mat_emp']; ?>
+        </div>
+        <div class="card-body"> 
+            <?= $userSelInfo['nom_emp']; ?> <?= $userSelInfo['prenom_emp']; ?>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-primary" href="config/control.php?matricule=<?= $userSelInfo['mat_emp']; ?>">Pointer</a>
+        </div>
+    </div><br>
+    <?php }?>
+</body>
+
+</html>

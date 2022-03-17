@@ -1,0 +1,19 @@
+<nav class="navbar fixed-bottom navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">GesPré</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg0">
+                <li class="nav-item">
+                    <a class="nav-link" href="admin/auth.php">Admin</a>
+                    <?php if(isset($id_admin)){ echo "<a class='nav-link' href='../sign-in.php?admin=<?=$id_admin;?>'
+                    title='Ajouter un employé'>Admin</a>"; } ?>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

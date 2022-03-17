@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <?php include('_navbar.html'); ?>
+        <div style="text-align: left;">
+            <img src="views/img/person-circle.svg"  width="30px" alt="Sa connecter en tant qu'administrateur" title="Se connecter en tant qu'admiinistrateur" />
+            <a href="admin/auth.php" title="Se connecter en tant qu'administrateur">Admin</a>
+        </div>
+        <div style="text-align: end; ">
+            <img src="views/img/box-arrow-right.svg" width="30px" alt="Deconnexion" title="Deconnexion" />
+            <a href="config/logout.php" title="Déconnexion">Déconnexion</a>
+        </div>
+        <form method="post" action="">
+            <label for="pass">Mot de passe :</label>
+            <input type="password" name="pass" placeholder="Entrer votre mot de passe"><br>
+            <input type="submit" name="envoyer" value="Pointer">
+            <p style="color: brown;"> <?php erreur($erreur) ?> </p>
+        </form>
+    </body>
+</html>
